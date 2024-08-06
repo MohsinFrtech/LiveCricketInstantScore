@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:contentDescription="@string/app_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/app_home" />
+
+    <item
+        android:id="@+id/recentFragment"
+        android:icon="@drawable/ic_recent"
+        android:contentDescription="@string/app_recent"
+        android:title="@string/app_recent" />
+
+    <item
+        android:id="@+id/upcomingFragment"
+        android:icon="@drawable/ic_upcoming"
+        android:contentDescription="@string/app_upcoming"
+        android:title="@string/app_upcoming" />
+
+    <item
+        android:id="@+id/teamRankingFragment"
+        android:contentDescription="@string/app_team_ranking"
+        android:icon="@drawable/team_rank"
+        android:title="@string/app_team_ranking" />
+
+    <item
+        android:id="@+id/playerRankingFragment"
+        android:contentDescription="@string/app_player_ranking"
+        android:icon="@drawable/player_rank"
+        android:title="@string/app_player_ranking" />
+</menu>

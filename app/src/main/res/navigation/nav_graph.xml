@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/home"
+    android:id="@+id/nav_graph">
+
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.ruthal.live.cricket.app.ui.fragments.FirstFragment"
+        tools:layout="@layout/first_screen_fragment"
+        android:label="Home Fragment">
+
+        <action
+            android:id="@+id/action_home_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/recentFragment"
+        android:name="com.ruthal.live.cricket.app.ui.fragments.RecentFixtureFragment"
+        tools:layout="@layout/recent_matches_fragment"
+        android:label="Recent Matches Fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/upcomingFragment"
+        android:name="com.ruthal.live.cricket.app.ui.fragments.UpcomingMatchesFragment"
+        tools:layout="@layout/upcoming_matches_layout"
+        android:label="Upcoming Matches Fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/teamRankingFragment"
+        android:name="com.ruthal.live.cricket.app.ui.fragments.TeamRankingFragment"
+        tools:layout="@layout/browse_screen_layout"
+        android:label="Browse Screen Fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/playerRankingFragment"
+        android:name="com.ruthal.live.cricket.app.ui.fragments.PlayerScreenFragment"
+        tools:layout="@layout/browse_screen_layout"
+        android:label="Player Screen Fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu"
+        android:name="com.ruthal.live.cricket.app.ui.fragments.MenuScreenFragment"
+        tools:layout="@layout/menu_screen_layout"
+        android:label="Menu Screen Fragment">
+
+    </fragment>
+</navigation>

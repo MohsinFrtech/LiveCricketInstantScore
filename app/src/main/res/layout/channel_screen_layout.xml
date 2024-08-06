@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/bottom_navigation"
+        android:layout_height="match_parent">
+        <View
+            android:layout_width="@dimen/_100sdp"
+            android:id="@+id/mainView"
+            android:layout_height="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/eventNameChannels"
+            android:layout_width="0sp"
+            android:visibility="visible"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/monst_bold"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainView"
+            android:layout_height="wrap_content"
+            android:text="Event NAME"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_16sdp"
+            />
+        <TextView
+            android:id="@+id/noStreamingChannel"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:fontFamily="@font/monst_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="No Live Channels available to show."
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_14sdp"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/channelRecycler"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/eventNameChannels"
+            android:layout_height="0sp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

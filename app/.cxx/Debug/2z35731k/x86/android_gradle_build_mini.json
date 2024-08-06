@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/Users/mac-mini/Documents/LiveCricketInstantScoreGithub/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/mac-mini/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/mac-mini/Documents/LiveCricketInstantScoreGithub/app/.cxx/Debug/2z35731k/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/mac-mini/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/mac-mini/Documents/LiveCricketInstantScoreGithub/app/.cxx/Debug/2z35731k/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "cricket::@6890427a1f51a3e7e1df": {
+      "artifactName": "cricket",
+      "abi": "x86",
+      "output": "/Users/mac-mini/Documents/LiveCricketInstantScoreGithub/app/build/intermediates/cxx/Debug/2z35731k/obj/x86/libcricket.so",
+      "runtimeFiles": []
+    }
+  }
+}

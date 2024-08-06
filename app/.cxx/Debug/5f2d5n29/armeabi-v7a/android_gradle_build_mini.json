@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/Users/mac-mini/Documents/LiveCricketInstantScore/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/mac-mini/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+      "-C",
+      "/Users/mac-mini/Documents/LiveCricketInstantScore/app/.cxx/Debug/5f2d5n29/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/mac-mini/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+    "-C",
+    "/Users/mac-mini/Documents/LiveCricketInstantScore/app/.cxx/Debug/5f2d5n29/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "cricket::@6890427a1f51a3e7e1df": {
+      "artifactName": "cricket",
+      "abi": "armeabi-v7a",
+      "output": "/Users/mac-mini/Documents/LiveCricketInstantScore/app/build/intermediates/cxx/Debug/5f2d5n29/obj/armeabi-v7a/libcricket.so",
+      "runtimeFiles": []
+    }
+  }
+}

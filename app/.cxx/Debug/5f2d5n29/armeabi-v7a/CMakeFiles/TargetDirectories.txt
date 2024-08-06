@@ -1,0 +1,3 @@
+/Users/mac-mini/Documents/LiveCricketInstantScore/app/.cxx/Debug/5f2d5n29/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/mac-mini/Documents/LiveCricketInstantScore/app/.cxx/Debug/5f2d5n29/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/mac-mini/Documents/LiveCricketInstantScore/app/.cxx/Debug/5f2d5n29/armeabi-v7a/CMakeFiles/cricket.dir
