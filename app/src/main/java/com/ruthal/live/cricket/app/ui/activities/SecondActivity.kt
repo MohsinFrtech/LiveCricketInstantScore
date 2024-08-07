@@ -107,7 +107,7 @@ class SecondActivity : AppCompatActivity(), NavController.OnDestinationChangedLi
 
     override fun onResume() {
         super.onResume()
-        checkVpn()
+//        checkVpn()
     }
 
     private fun checkVpn() {

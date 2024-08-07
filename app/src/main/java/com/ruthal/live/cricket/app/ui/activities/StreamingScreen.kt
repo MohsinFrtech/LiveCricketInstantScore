@@ -560,7 +560,7 @@ class StreamingScreen : AppCompatActivity(), Player.Listener, AdManagerListener 
             }
         }
 
-        checkVpn()
+//        checkVpn()
     }
 
     private fun checkVpn() {
