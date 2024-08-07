@@ -3,6 +3,9 @@ package com.ruthal.live.cricket.app.ui.activities
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -17,6 +20,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -81,6 +85,7 @@ class StreamingScreen : AppCompatActivity(), Player.Listener, AdManagerListener 
     private var orientationEventListener: OrientationEventListener? = null
     private var bindingExoPlayback: ExoPlaybackControlViewBinding? = null
     private var adManager: AdManager? = null
+    private var booleanVpn: Boolean? = false
 
     ///Playback location
     enum class PlaybackLocation {
@@ -555,7 +560,40 @@ class StreamingScreen : AppCompatActivity(), Player.Listener, AdManagerListener 
             }
         }
 
+        checkVpn()
     }
+
+    private fun checkVpn() {
+        val connectivityManager =
+            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
+        connectivityManager?.let {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                it.getNetworkCapabilities(connectivityManager.activeNetwork)?.apply {
+                    val booleanVpnCheck = hasTransport(NetworkCapabilities.TRANSPORT_VPN)
+                    booleanVpn = booleanVpnCheck == true
+                }
+            } else {
+                booleanVpn = false
+            }
+        }
+
+        if (booleanVpn != null) {
+            if (booleanVpn!!) {
+                if (binding?.adblockLayout?.isVisible!!) {
+                    /////////
+
+                } else {
+                    binding?.adblockLayout?.visibility = View.VISIBLE
+
+                }
+            } else {
+                binding?.adblockLayout?.visibility = View.GONE
+
+            }
+        }
+
+    }
+
 
 
     /////Media builder function

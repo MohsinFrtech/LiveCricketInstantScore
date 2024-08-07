@@ -6,7 +6,8 @@
     <string name="app_upcoming">Upcoming</string>
     <string name="app_team_ranking">Teams Ranking</string>
     <string name="app_player_ranking">Player Ranking</string>
-
+    <string name="adblock">We detected ad blocker or vpn running on your device.Please disable adblocker and then use our app.</string>
+    <string name="ad_blocker">adblocker</string>
     <!--SplashScreen-->
     <string name="no_internet_string">Internet connection lost! , please check your internet connection.</string>
     <string name="retry">Retry</string>

@@ -2,9 +2,13 @@ package com.ruthal.live.cricket.app.ui.activities
 
 import android.app.Dialog
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -18,6 +22,7 @@ import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -69,6 +74,7 @@ class SecondActivity : AppCompatActivity(), NavController.OnDestinationChangedLi
     private var showNavigationAd = 2
     private var time = "0"
     private var adStatus = false
+    private var booleanVpn: Boolean? = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,6 +104,43 @@ class SecondActivity : AppCompatActivity(), NavController.OnDestinationChangedLi
 
         setUpNavigationGraph()
     }
+
+    override fun onResume() {
+        super.onResume()
+        checkVpn()
+    }
+
+    private fun checkVpn() {
+        val connectivityManager =
+            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
+        connectivityManager?.let {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                it.getNetworkCapabilities(connectivityManager.activeNetwork)?.apply {
+                    val booleanVpnCheck = hasTransport(NetworkCapabilities.TRANSPORT_VPN)
+                    booleanVpn = booleanVpnCheck == true
+                }
+            } else {
+                booleanVpn = false
+            }
+        }
+
+        if (booleanVpn != null) {
+            if (booleanVpn!!) {
+                if (bindingSecond?.adblockLayout?.isVisible!!) {
+                    /////////
+
+                } else {
+                    bindingSecond?.adblockLayout?.visibility = View.VISIBLE
+
+                }
+            } else {
+                bindingSecond?.adblockLayout?.visibility = View.GONE
+
+            }
+        }
+
+    }
+
 
     private fun showDialogue() {
         val dialog = Dialog(this)
